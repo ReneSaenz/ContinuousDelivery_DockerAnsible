@@ -15,6 +15,10 @@ For python 3.6.1 <br>
 #### Install pip <br>
 `c:\choco install pip`
 
+
+#### Install Django (asp mvc for python)
+`c:\pip install django==1.9`
+
 #### Install AWS command line interface Tools
 
 `c:\ choco install awscli`
