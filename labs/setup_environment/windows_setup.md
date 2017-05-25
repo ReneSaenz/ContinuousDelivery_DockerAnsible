@@ -15,6 +15,8 @@ For python 3.6.1 <br>
 #### Install pip <br>
 `c:\choco install pip`
 
+#### Install python virtual environment support
+`c:\pip install virtualenv`
 
 #### Install Django (asp mvc for python)
 `c:\pip install django==1.9`

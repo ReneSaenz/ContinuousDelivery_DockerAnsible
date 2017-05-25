@@ -27,4 +27,25 @@ c:\cd todobackend
 c:\mkdir src
 c:\mv manage.py src
 c:\mv todobackend src
-``` 
+```
+
+At this point, this is our initial project setup, so we can use _git_ to commit.
+
+Inside the project folder, create a python virtual environment in a folder called *`venv`*
+```
+c:\todobackend\virtualenv venv
+```
+In order to NOT have the virtual environment as part of the *git* repo, we flag the *`venv`* folder in the *.gitignore* file.
+
+We can now activate the virtual environment.
+
+First, in order to execute the _activate_ script, we need to relax powershell execution policy.
+```
+c:\todobackend\Set-ExecutionPolicy AllSigned
+```
+
+Active the environment
+
+```
+c:\todobackend\venv\scripts\activate
+```
