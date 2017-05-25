@@ -23,7 +23,7 @@ $ brew install docker-machine
 ```
 
 All of these tools are bundled into a toolbox
-- [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+[Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 Installing Ansible
 

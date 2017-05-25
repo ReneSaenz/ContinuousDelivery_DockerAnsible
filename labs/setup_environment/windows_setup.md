@@ -1,25 +1,35 @@
 # Software Setup for Windows
 
 
-Package Manager
+#### Package Manager
 
 Install [chocolatey](https://chocolatey.org/)
 
-Install AWS command line interface Tools
+#### Install python.
+For python 2.x <br>
+`c:\choco install python2`
+<br>
+For python 3.6.1 <br>
+`c\choco install python`
 
-`c:\ choco install awscli --version 1.0.4`
+#### Install pip <br>
+`c:\choco install pip`
+
+#### Install AWS command line interface Tools
+
+`c:\ choco install awscli`
 
 
-Installing other Tools
+#### Installing other Tools
 
 Text Editor. [Atom](https://atom.io/)
 
 
-#### Create Docker Machine
+### Create Docker Machine
 
 Use `docker quick start terminal`. The `default` docker machine is already created for you on Windows
 
-#### Create working directory
+### Create working directory
 
 You can place it and name it however you like.
 I will Use
