@@ -6,7 +6,7 @@ Once you have your environment all setup, perform the following.
 
 Select a project location and perform the following.
 
-`c:\django-admin startproject todobackend`
+`$ django-admin startproject todobackend`
 
 This will create a project skeleton for you.
 
@@ -21,75 +21,72 @@ Inside the _todobackend_ folder, you will find the following.
 - _wsgi.py_ provides the means for connect to an external webserver such as apache or nginx to pipeline http requests in response to the application.
 
 
-At this point, we need to reorganize the project tree structure. This is important for the _Continuous Delivery_ workflow. We want to have clean separation between app code and CD tooling that will be built. Perform the following.
+At this point, we need to reorganize the project tree structure. This is important for the _Continuous Delivery_ workflow. <br>
+We want to have clean separation between app code and CD tooling that will be built. Perform the following.
 ```
-c:\cd todobackend
-c:\mkdir src
-c:\mv manage.py src
-c:\mv todobackend src
+$ cd todobackend
+$ mkdir src
+$ mv manage.py src
+$ mv todobackend src
 ```
 
 At this point, this is our initial project setup, so we can use _git_ to commit.
 
 Inside the project folder, create a python virtual environment in a folder called *`venv`*
 ```
-c:\todobackend\virtualenv venv
+$ cd todobackend
+$ virtualenv venv
 ```
 In order to NOT have the virtual environment as part of the *git* repo, we flag the *`venv`* folder in the *.gitignore* file.
 
 We can now activate the virtual environment.
 
-First, in order to execute the _activate_ script, we need to relax powershell execution policy.
-```
-c:\todobackend\Set-ExecutionPolicy AllSigned
-```
-
 Active the environment
 
 ```
-c:\code\todobackend\venv\scripts\activate
+$ source venv/bin/activate
 ```
 
 You should see the prompt change, indicating we are operating in the virtual environment.
 
 ```
-(venv) PS C:\code\todobackend>
+(venv) todobackend$
 ```
 
 At this point, we can install all of the software our application needs.
 _NOTE:_ This might seem strange since we previously install these two.
 They were installed at the system level and not at the virtual environment level.
 ```
-(venv) PS C:\code\todobackend> pip install pip --upgrade
+(venv) todobackend$ pip install pip --upgrade
 ```
 
 Install django in the virtual environment
 ```
-(venv) PS C:\code\todobackend> pip install django==1.9
+(venv) todobackend$ pip install django==1.9
 ```
 
 Install Django REST support
 ```
-(venv) PS C:\code\todobackend> pip install djangorestframework==3.3
+(venv) todobackend$ pip install djangorestframework==3.3
 ```
 
 Install Django CORS (Cross origin hearder) support
 
 ```
-(venv) PS C:\code\todobackend> pip install django-cors-headers==1.1
+(venv) todobackend$ pip install django-cors-headers==1.1
 ```
 
 Add an "app"  in Django terminology. The "app" will be called *todo*
 
 ```
-(venv) PS C:\code\todobackend> cd src
-(venv) PS C:\code\todobackend\src> python manage.py startapp todo
+(venv) src$ cd src
+(venv) src$ python manage.py startapp todo
 ```
+
 
 This will create the *todo* app
 
 ```
-C:.
 │   manage.py
 │
 ├───todo

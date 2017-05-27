@@ -34,11 +34,19 @@ Before installing Ansible, we need to make sure python 2.7 is installed.
 The previous command will also install the `pip` python package manager. To ensure we have the most up-to-date pip, we run the following.<br>
 `$ pip install pip --upgrade`
 
+Install python virtual environment support
+`$ pip install virtualenv`
+
+Install Django (asp mvc for python)
+`$ pip install django==1.9`
+
+
 We are now ready to install Ansible.
 
 `$ pip install ansible --upgrade`
 
 NOTE: Make sure to include the `--upgrade` flag to ensure we always get the latest version of Ansible.
+
 
 Install official python SDK to communicate with AWS
 
