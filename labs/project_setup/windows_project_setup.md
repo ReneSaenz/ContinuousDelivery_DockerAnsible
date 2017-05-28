@@ -40,6 +40,8 @@ In order to NOT have the virtual environment as part of the *git* repo, we flag 
 We can now activate the virtual environment.
 
 First, in order to execute the _activate_ script, we need to relax powershell execution policy.
+_NOTE:_ This is very important because command `python manage.py runserver` will fail!
+
 ```
 c:\todobackend\Set-ExecutionPolicy AllSigned
 ```
