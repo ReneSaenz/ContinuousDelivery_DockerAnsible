@@ -10,6 +10,17 @@ Select a project location and perform the following.
 
 This will create a project skeleton for you.
 
+```
+$ tree todobackend
+todobackend
+├── manage.py
+└── todobackend
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+```
+
 Among the things it creates:
 - _manage.py_ Management utility to perform various project tasks
 - _todobackend_ folder, refered as the django root folder.
@@ -27,8 +38,22 @@ We want to have clean separation between app code and CD tooling that will be bu
 $ cd todobackend
 $ mkdir src
 $ mv manage.py src
-$ mv todobackend src
+$ mv todobackend/ src
 ```
+
+You should end up with this dir structure
+```
+$ tree
+.
+└── src
+    ├── manage.py
+    └── todobackend
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
+```
+
 
 At this point, this is our initial project setup, so we can use _git_ to commit.
 
