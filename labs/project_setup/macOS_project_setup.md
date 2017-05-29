@@ -1,4 +1,4 @@
-# Windows Project Setup
+# Mac Project Setup
 
 Once you have your environment all setup, perform the following.
 
