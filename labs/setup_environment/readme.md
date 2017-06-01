@@ -23,11 +23,3 @@ and
 [Azure](https://azure.microsoft.com/en-us/free)
 and
 [Azure SDK](https://azure.microsoft.com/en-us/downloads/)
-
-#### Software Setup
-- [Mac](macOS_setup.md)
-- [Windows](windows_setup.md)
-
-- Other supporting Tools. (atom, tree, iterm2)
-- Create a Docker Virtual Machine
-- Create working directory

@@ -2,6 +2,8 @@
 
 [Environment Setup](labs/setup_environment/readme.md)
 
+[Software Setup](labs/software_setup/readme.md)
+
 [Project Setup](labs/project_setup/readme.md)
 
 [Project Web Service](labs/project_webservice/readme.md)
