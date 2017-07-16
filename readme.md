@@ -1,9 +1,11 @@
 # Continuous Delivery using Docker and Ansible
 
-[Environment Setup](labs/setup_environment/readme.md)
+1. [Environment Setup](labs/setup_environment/readme.md)
 
-[Software Setup](labs/software_setup/readme.md)
+2. [Software Setup](labs/software_setup/readme.md)
 
-[Project Setup](labs/project_setup/readme.md)
+3. [Project Setup](labs/project_setup/readme.md)
 
-[Project Web Service](labs/project_webservice/readme.md)
+4. [Project Web Service](labs/project_webservice/readme.md)
+
+5. [Unit and Integration Tests](labs/unit_integration_test.md)
