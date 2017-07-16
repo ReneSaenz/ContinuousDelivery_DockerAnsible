@@ -170,7 +170,44 @@ Quit the server with CONTROL-C.
 ```
 Now that our todobackend webservice is running, lets run our acceptance tests. On another terminal, execute.
 ```
-
-Run our acceptance tests
-```
 $ cd todobackend-specs
+$ ./node_modules/.bin/mocha
+```
+
+### Testing User Interface
+
+A user interface has been created. Just clone into source code directory.
+```
+$ cd code
+$ ls -l
+drwxr-xr-x  476B Jul 15 22:53 todobackend-client
+drwxr-xr-x  272B Jul 15 20:46 todobackend-specs
+
+$ git clone https://github.com/jmenga/todobackend-client.git
+$ ls -l
+drwxr-xr-x  476B Jul 15 22:53 todobackend-client
+drwxr-xr-x  272B Jul 15 20:46 todobackend-specs
+drwxr-xr-x  204B Jul 12 21:15 todobackend
+```
+Next, install the project
+```
+$ cd todobackend-client
+$ npm install -g grunt-cli
+$ npm install
+```
+
+Next, start our `todobackend` webservice
+```
+$ cd todobackend/src
+$ python manage.py runserver --settings=todobackend.settings.test
+```
+
+On another terminal, run the client app
+```
+$ cd todobackend-client
+$ node app.js
+```
+
+You can now go to `http://localhost:3000` and enter the endpoint of the `todobackend` webservice.
+
+You can enter "Todos", mark them as done and delete them.

@@ -38,7 +38,7 @@ Install python virtual environment support
 `$ pip install virtualenv`
 
 Install Django (asp mvc for python)
-`$ pip install django==1.9`
+`$ pip install django==1.11.3`
 
 
 We are now ready to install Ansible.

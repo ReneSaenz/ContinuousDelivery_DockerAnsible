@@ -87,18 +87,18 @@ They were installed at the system level and not at the virtual environment level
 
 Install django in the virtual environment
 ```
-(venv) todobackend$ pip install django==1.9
+(venv) todobackend$ pip install django==1.11.3
 ```
 
 Install Django REST support
 ```
-(venv) todobackend$ pip install djangorestframework==3.3
+(venv) todobackend$ pip install djangorestframework==3.6.3
 ```
 
 Install Django CORS (Cross origin hearder) support
 
 ```
-(venv) todobackend$ pip install django-cors-headers==1.1
+(venv) todobackend$ pip install django-cors-headers==2.1.0
 ```
 
 Add an "app"  in Django terminology. The "app" will be called *todo*
