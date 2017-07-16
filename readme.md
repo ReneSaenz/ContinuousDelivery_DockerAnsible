@@ -8,4 +8,4 @@
 
 4. [Project Web Service](labs/project_webservice/readme.md)
 
-5. [Unit and Integration Tests](labs/unit_integration_test.md)
+5. [Unit and Integration Tests](labs/unit_integration_test/readme.md)
