@@ -103,6 +103,74 @@ The `mocha-jenkins-reporter` package allow us to output test reports in a JUnit 
 
 ## Writing Acceptance tests
 
+First, create a directory called test, and inside of it, a file called tests.js
+```
+$ cd todobackend-specs
+$ mkdir test
+$ mkdir tests.js
+```
+Add functionality in this file to run your tests against our todobackend web service.
 
 
 ## Running Acceptance tests
+
+To run our acceptance tests, first active our virtual environment.
+
+```
+$ cd todobackend
+$ source venv/bin/activate
+```
+Lets make sure our todobackend app is run by using the `manage.py` command, which runs on port 8000 by default.
+```
+$ cd src
+$ python manage.py runserver --settings=todobackend.settings.test
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+
+July 16, 2017 - 01:31:56
+Django version 1.9, using settings 'todobackend.settings.test'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+```
+Notice that we have not applied our migrations to mysql. Lets do that.
+```
+$ python manage.py migrate --settings=todobackend.settings.test
+Operations to perform:
+  Apply all migrations: admin, contenttypes, todo, auth, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying sessions.0001_initial... OK
+  Applying todo.0001_initial... OK
+```
+Then we can proceed to run the application.
+```
+$ python manage.py runserver --settings=todobackend.settings.test
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 16, 2017 - 01:36:13
+Django version 1.9, using settings 'todobackend.settings.test'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+```
+Now that our todobackend webservice is running, lets run our acceptance tests. On another terminal, execute.
+```
+
+Run our acceptance tests
+```
+$ cd todobackend-specs
