@@ -1,4 +1,4 @@
-# MacOS Unit and Integration testing
+# MacOS Unit and Integration Testing
 
 ## Unit Tests
 
