@@ -17,8 +17,8 @@ This lab is composed of 3 parts
 
 1. Create Docker Test Environment.
 - [Create base image](creating_docker_base_image.md)
-- Create development images
-- Docker composed to improve the test flow and to facilitate multi-container testing.
+- [Create development image](creating_docker_dev_image.md)
+- [Multi-Container](multi_container_testing.md) testing environment using `docker-compose`
 
 2. Run Unit Tests - Single container environment
 
