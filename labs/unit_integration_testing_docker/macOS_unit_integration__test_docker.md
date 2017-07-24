@@ -15,11 +15,6 @@ So we already have the building blocks. In this lab, we will create a Docker wor
 
 This lab is composed of 3 parts
 
-1. Create Docker Test Environment.
-- [Create base image](creating_docker_base_image.md)
-- [Create development image](creating_docker_dev_image.md)
-- [Multi-Container](multi_container_testing.md) testing environment using `docker-compose`
-
-2. Run Unit Tests - Single container environment
-
-3. Run Integration Tests - Single/Multi Container Complex Workflow
+1. [Create base image](creating_docker_base_image.md)
+2. [Create development image](creating_docker_dev_image.md)
+3. [Multi-Container](multi_container_testing.md) testing environment using `docker-compose`
