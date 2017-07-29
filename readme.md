@@ -8,8 +8,8 @@
 
 4. [Project Web Service](labs/project_webservice/readme.md)
 
-5. [Unit and Integration Tests](labs/unit_integration_tests/readme.md)
+5. [Acceptance Testing](labs/acceptance_testing/readme.md)
 
-6. [Unit and Integration Tests using Docker](labs/unit_integration_testing_docker/readme.md)
+6. [Unit and Integration Tests](labs/unit_integration_tests/readme.md)
 
-7. [Acceptance Testing](labs/acceptance_testing/readme.md)
+7. [Unit and Integration Tests using Docker](labs/unit_integration_testing_docker/readme.md)
