@@ -10,6 +10,6 @@
 
 5. [Unit and Integration Tests](labs/unit_integration_tests/readme.md)
 
-6. [Unit and Integration Tests using Containers](labs/unit_integration_testing_docker/readme.md)
+6. [Unit and Integration Tests using Docker](labs/unit_integration_testing_docker/readme.md)
 
 7. [Acceptance Testing](labs/acceptance_testing/readme.md)

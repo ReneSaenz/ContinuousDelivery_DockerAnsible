@@ -167,7 +167,8 @@ $ cd todobackend
 $ mkdir docker-ansible
 ```
 
-We will create a Dockerfile that contains the following parts.
+We will create generic container with Ansible.
+The Dockerfile to produce that image, contains has the following parts.
 
 Installs the latest stable version of ansible
 ```
@@ -199,11 +200,61 @@ $ cd docker-ansible
 $ docker build -t renesaenz/ansible .
 ```
 
+We also need to create a folder called `ansible` under the `todobackend` folder.
+```
+$ cd todobackend
+$ mkdir ansible
+$ tree -L 1
+.
+├── ansible
+├── docker
+├── scripts
+├── src
+└── venv
+
+5 directories, 0 files
+```
+Under the `ansible` folder, we will create a playbook called `probe.yml`.
+Our playbook will have the ansible tasks to probe the `db` service and see
+if it is ready for connections.
+
+Now we need to modify our `docker-compose` file and add the agent service.
+```
+agent:
+  image: renesaenz/ansible
+  volumes:
+    - ../../ansible/probe.yml:/ansible/site.yml
+  links:
+    - db
+  environment:
+    PROBE_HOST: "db"
+    PROBE_PORT: "3306"
+  command: ["probe.yml"]
+```
+
 Lets try out our helper agent
-To clean up, run the following commands
+Go to the Docker development image directory
+```
+$ cd todobackend/docker/dev
+$ tree
+.
+├── Dockerfile
+└── docker-compose.yml
+```
+
+Then, execute the following to clean up
 ```
 $ docker-compose kill
+
 $ docker-compose rm -f
+Going to remove dev_test_1, dev_cache_1, dev_db_1
+Removing dev_test_1 ... done
+Removing dev_cache_1 ... done
+Removing dev_db_1 ... done
+```
+Now that we have cleaned the previous services created by `docker-compose`,
+we can start from new.
+```
 $ docker-compose up agent
 Creating dev_db_1
 Creating dev_agent_1
@@ -217,5 +268,35 @@ It will create the "db" service and will run the helper agent.
 We can now run our tests
 ```
 $ docker-compose up test
+dev_db_1 is up-to-date
+Creating dev_cache_1 ...
+Creating dev_cache_1 ... done
+Creating dev_test_1 ...
+Creating dev_test_1 ... done
+Attaching to dev_test_1
+...
+test_1     | ----------------------------------------------------------------------
+test_1     | XML: /reports/unittests.xml
+test_1     | Name                              Stmts   Miss  Cover
+test_1     | -----------------------------------------------------
+test_1     | todo/__init__.py                      0      0   100%
+test_1     | todo/admin.py                         1      1     0%
+test_1     | todo/migrations/0001_initial.py       6      0   100%
+test_1     | todo/migrations/__init__.py           0      0   100%
+test_1     | todo/models.py                        6      6     0%
+test_1     | todo/serializers.py                   7      0   100%
+test_1     | todo/urls.py                          6      0   100%
+test_1     | todo/views.py                        17      0   100%
+test_1     | -----------------------------------------------------
+test_1     | TOTAL                                43      7    84%
+test_1     | ----------------------------------------------------------------------
+test_1     | Ran 12 tests in 0.298s
+test_1     |
+test_1     | OK
+test_1     |
+test_1     | nosetests --verbosity=2 --nologcapture --with-coverage --cover-package=todo --with-spec --spec-color --with-xunit --xunit-file=/reports/unittests.xml --cover-xml --cover-xml-file=/reports/coverage.xml
+test_1     | Creating test database for alias 'default'...
+test_1     | Destroying test database for alias 'default'...
+dev_test_1 exited with code 0
 ```
 And our tests run successfully every time now, since we have assured the "db" service is up and running and ready for connections.
