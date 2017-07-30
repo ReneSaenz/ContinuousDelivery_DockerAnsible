@@ -13,3 +13,5 @@
 6. [Unit and Integration Tests](labs/unit_integration_tests/readme.md)
 
 7. [Unit and Integration Tests using Docker](labs/unit_integration_testing_docker/readme.md)
+
+8. [Building Artifacts with Docker](labs/building_artifacts_docker/readme.md)
